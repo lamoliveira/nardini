@@ -1345,6 +1345,181 @@
     <meta name=adopt-website-id content="9028214f-84a6-4f04-82c0-2b26884c3f4a">
     <script src=https://tag.goadopt.io/injector.js?website_code=9028214f-84a6-4f04-82c0-2b26884c3f4a
         class="adopt-injector"></script>
+
+
+
+
+    
+        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.9.1.min.js"></script>
+
+        <script type="text/javascript">
+        
+            window.addEventListener("load", mediaSizer);
+            //window.addEventListener("resize", mediaSizer);
+            // Listeners that will react when the page first loads or is resized.
+            // If any of these events take place the mediaSizer() function executes.
+        
+            var vizList = [
+        
+                "https://public.tableau.com/views/resultadonardini/AcompanhamentodeResultado?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/HUMANRESOURCES-HRExpensesDashboardBrasilnardini/Cockpit?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/shared/9DP8W9RJS?:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/resultadomarcasmobiauto/AcompanhamentodeResultado?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/2-Templatespolipecas/Template?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/3-Exemplopolipecas/DashExemplo?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/Howhastheworldchangedsince1962/WorldIndicators?:language=en-US&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/Ocorrnciasnardini/Reclamaes?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/RetailDemowithSpatialAnalyticspoptrade/LayoutdeLoja?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/FacebookAdsDashboard_15566377846980/ExecutiveSummary?:language=en-US&:toolbar=n&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/RepVendasBenchmarknardini/RepVendasBenchmark?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        
+                "https://public.tableau.com/views/SpendAnalyticsDashboard_16056925975720/Home?:apiInternalVersion=1.131.0&:disableUrlActionsPopups=n&navSrc=Opt&:embed=y&navType=0&:suppressDefaultEditBehavior=n&mobile=n&:toolbar=n&:hideEditButton=y&:hideEditInDesktopButton=n&:jsdebug=n&:apiExternalVersion=3.6.0&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/1-DesigningEffectiveDashboardsPublic/Intro?:language=en-US&:display_count=n&:origin=viz_share_link",
+                "https://public.tableau.com/views/Embedded_Analytics/Introduo?:language=en-US&:display_count=n&:origin=viz_share_link"
+        
+        
+        
+            ];
+            // Array of Tableau Server URLs for dashboard or sheet navigation.
+        
+            var viz,
+                vizLen = vizList.length,
+                vizCount = 0,
+                devType,
+                vHideTabs = true,
+                vHideToolbar = true;
+            var options = {
+                device: devType,
+            };
+        
+        
+            function mediaSizer() {
+                // Determines the correct viz layout according to screen sizes.
+                if (window.matchMedia("(max-width: 450px)").matches) {
+                    //alert("I am a phone layout!");
+                    devType = 'phone';
+                    vWidth = 420;
+                    vHeight = 2000;
+                    launchViz(0);
+                    vHeight = 1200;
+                    launchViz(1);
+                    vHeight = 2000;
+                    //launchViz(3);
+                    vHeight = 2000;
+                   // launchViz(5);
+                    vHeight = 1200;
+        
+                    launchViz(7);
+                    vHeight = 2000;
+                   //launchViz(8);
+                    launchViz(10);
+        
+                    //options.device = 'phone';
+                } else if (window.matchMedia("(max-width: 980px)").matches) {
+                    //alert("I am a tablet layout!");
+                    devType = 'tablet';
+                    vWidth = 980;
+                    //options.device = 'tablet';
+                    console.log("devtype: " + devType)
+                    console.log("launch0")
+                    launchViz(0);
+                    console.log("launch1")
+                    launchViz(1);
+                    console.log("launch2")
+        
+                  //  launchViz(2);
+                    //launchViz(3);
+                   // launchViz(4);
+        
+                    launchViz(6);
+        
+                    // Launches the viz again with the new sizing at the current index of vizList.
+                } else {
+                    //alert("I am a desktop layout!");
+                    devType = 'desktop';
+                    vWidth = 1600;
+                    vHeight = 800;
+                    //options.device = 'desktop';
+                    console.log("devtype: " + devType)
+                    console.log("launch0")
+                    launchViz(0);
+                    console.log("launch1")
+                    vHeight = 800;
+                    launchViz(1);
+                    vHeight = 1000;
+                    console.log("launch2")
+        
+                    //launchViz(2);
+                    console.log("launch3")
+                    //launchViz(3);
+                   // launchViz(4);
+                    vHideToolbar = true;
+                    vHideTabs = true;
+                  //  launchViz(5);
+                    vWidth = 1000;
+                    launchViz(6);
+                    vWidth = 1600;
+        
+                    vHideToolbar = false;
+                    vHideTabs = false;
+                    vHeight = 800;
+                    launchViz(7);
+                    vWidth = 1600;
+                   // launchViz(8);
+                   // vHeight = 1000;
+                    //launchViz(9);
+                    vHeight = 800;
+                    launchViz(10);
+                    //vHeight = 1000;
+                   // launchViz(11);
+                    launchViz(12);
+                    launchViz(13);
+        
+                    // Launches the viz again with the new sizing at the current index of vizList.
+                }
+        
+            }
+        
+        
+            function launchViz(vizNav) {
+                // JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
+                console.log("vizContainer" + vizNav)
+                console.log("devtype: " + devType)
+                var vizDiv = document.getElementById("vizContainer" + vizNav),
+                    // Will embed the visualization on a div with id="VizContainer"
+                    options = {
+                        device: devType,
+                        width: vWidth,
+                        height: vHeight,
+                        hideTabs: vHideTabs,
+                        hideToolbar: vHideToolbar,
+                        onFirstInteractive: function () {
+                            listenToMarksSelection();
+                        }
+                    };
+        
+        
+                var vizURL = vizList[vizNav];
+                // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
+        
+                try {
+                    // Initializes the viz from the array with desired options. 
+                    viz = new tableau.Viz(vizDiv, vizURL, options);
+                    if (!viz) throw 'viz not initialized'
+                }
+                catch (err) {
+                    alert(err);
+                }
+                finally {
+                    console.log('whatever')
+                    console.count('initViz')
+                }
+        
+            }
+        
+        </script>
+
+
 </head>
 
 <body class="index">
@@ -1829,8 +2004,162 @@
                 </div>
             </div>
         </section>
+
+
+        
         <section
             class="py-block py-md-block bg-white news rounded-top-left-3 reset-color rounded-top-right-3 pseudo-bg-primary-emphasis">
+
+
+            
+<div style="text-align: center;">
+    <div style="display: inline-block;">
+        <p> Este é um micro-site criado somente para ilustrar o que seria o Tableau embedded no seu site. Somente alguns exemplos para inspira-los 
+        </p>
+        <p>na avaliação do Tableau e para conhecermos melhor o seu use case. Todos os dashboards apresentados contem dados ficticios para fins educacionais </p>
+        <div id="vizContainer0"></div>
+    </div>
+</div>
+
+
+    
+    
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um exemplo de dashboard para acompanhamento por marcas.</p>
+                <div id="vizContainer3"></div>
+            </div>
+        </div> -->
+    
+    
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um exemplo da comunidade Tableau sobre vendas de carros em UK</p>
+    
+                <div id="vizContainer2"></div>
+            </div>
+        </div> -->
+    
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard de um exemplo de template para que todos os usuários tenham facilidade para
+                    criar novos dashs e seguindo os padrões da empresa</p>
+    
+                <div id="vizContainer4"></div>
+            </div>
+        </div> -->
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard usando o template ilustrado no dash anterior</p>
+    
+                <div id="vizContainer5"></div>
+            </div>
+        </div> -->
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                
+                <p> Abaixo um dashboard que acompanha a distribuição de chamados de reclamações pelos clientes.</p>
+                
+                <div id="vizContainer7"></div>
+                </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="display: inline-block;">
+                        <p> - </p>
+                        <p> Abaixo um dashboard mais lúdico disponível no Tableau Public. Voce pode acompanhar a animação
+                            clicando no triangulo no canto inferior direito</p>
+                        <p>O Tableau Public é uma plataforma gratuita para explorar, criar e compartilhar publicamente
+                            visualizações de dados online. </p>
+                        <p> Com o maior repositório de visualizações de dados do mundo para aprender, o Tableau Public
+                            facilita o desenvolvimento de habilidades de dados.</p>
+            
+                        <div id="vizContainer6"></div>
+                    </div>
+                </div>
+
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard que acompanha despesas de recursos humanos. Voce pode encontrar esse
+                    dashboard nos Accelerators Tableau</p>
+                <p>Os aceleradores do Tableau são painéis pré-criados projetados para ajudar você a obter um impulso
+                    inicial na análise de dados.</p>
+                <p>Adaptados a setores específicos e aplicativos corporativos, os Aceleradores são criados com dados
+                    de amostra que você pode trocar por seus próprios dados,</p>
+                <p> permitindo que você descubra insights com configuração mínima.</p>
+                <div id="vizContainer1"></div>
+            </div>
+        </div>
+     <!--    <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Avalie a organização das prateleiras das lojas com análise espacial.
+                <p> -- </p>
+                <div id="vizContainer8"></div>
+            </div>
+        </div> -->
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+    
+                <p> - </p>
+                <p> Abaixo um dashboard para ánalise de facebook ads. Também disponível nos Accelerators Tableau</p>
+                <p>Avalie e melhore o desempenho de suas campanhas de marketing com o Facebook Ads.
+                    Identifique as campanhas mais impactantes.</p>
+                <p> Mergulhe fundo na eficiência da campanha em: Reconhecimento, Engajamento, Conversão.</p>
+                <p>Melhorar o retorno sobre o investimento.
+                    Audite os resultados da otimização da campanha ao longo do tempo.</p>
+                <div id="vizContainer9"></div>
+            </div>
+        </div> -->
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard para acompanhamento dos Vendedores para Benchmark</p>
+                <p>Permite um benchmark para entenderem como estão performando comparado aos pares ou outros
+                    parceiros do mesmo mercado</p>
+                <p> - - </p>
+                <div id="vizContainer10"></div>
+            </div>
+        </div>
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard para acompanhamento de contratos. Também disponível nos Accelerators Tableau
+                </p>
+                <p>Avalie e monitore seu volume de gastos
+                    Entenda melhor sua alocação de gastos em categorias de gastos e fornecedores</p>
+                <p>Monitore e melhore os KPIs</p>
+                <div id="vizContainer11"></div>
+            </div>
+        </div> -->
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p>-</p>
+                <p> O dashboard a seguir é um exemplo de webinar que utilizamos no inicio da jornada para criação de
+                    cultura de dados. </p>
+                <p>Tem muita informação relevante para que voce possa conhecer um pouco mais sobre a plataforma
+                    Tableau e como te ajudamos a construir cultura de dados/>
+                <p>-</p>
+                <div id="vizContainer12"></div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p>-</p>
+                <p> O dashboard a seguir é um exemplo de webinar sobre embedded. </p>
+                <p>Tem muita informação relevante para que voce possa conhecer um pouco mais sobre embedded</p>
+                <p>-</p>
+                <div id="vizContainer13"></div>
+            </div>
+        </div>
+    </div>
+
+
+
             <div class="container">
                 <div class="row gx-0 gy-2 gy-md-4 justify-content-between">
                     <div class="col-md-9 order-1">
